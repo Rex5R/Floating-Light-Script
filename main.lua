@@ -22,6 +22,7 @@ task.spawn(function() while wait() do lightpoint.CFrame = lightpoint.CFrame * CF
 
 game:GetService("UserInputService").InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.E then
+		print("Placed light .. " .. game.Players:GetNameFromUserIdAsync(game.Players.LocalPlayer.UserId))
 		lightpoint.Parent = workspace
 		game:GetService("TweenService"):Create(
 			lightpoint,
@@ -31,4 +32,4 @@ game:GetService("UserInputService").InputBegan:Connect(function(input)
 	end
 end)
 
-game:GetService("UserInputService").InputBegan:Connect(function(input) if input.KeyCode == Enum.KeyCode.F then lightpoint.Parent = game.ReplicatedStorage end end)
+game:GetService("UserInputService").InputBegan:Connect(function(input) if input.KeyCode == Enum.KeyCode.F then print("Removed light .. " .. game.Players:GetNameFromUserIdAsync(game.Players.LocalPlayer.UserId)) lightpoint.Parent = game.ReplicatedStorage end end)
